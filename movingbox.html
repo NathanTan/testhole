@@ -3,7 +3,36 @@
 <html>
 <head>
 	<title>Moving Box</title>
-</head>
+
+
+	<style>
+		#box{ background-color: blue;}
+	</style>	
+	<script>
+		var b;
+		function init(){
+		   //setup for animations
+		   b = document.getElementById("box");
+		   b.onclick = move();
+		}
+
+		function move(){
+		}
+
+		window.requestAnimFrame = (function(){
+		      return	window.requestAnimationFrame		||
+		      		window.webkitRequestAnimationFrame	||
+				window.mozRequestAnimationFrame		||
+				window.oRequestAnimationFrame		||
+				window.msRequestAnimationFrame		||
+				function(/* function */ callback, /* DOM Element */ element){
+					window.setTimeout(callback, 1000 / 60);
+				};
+			}}();
+	</script>
+
+
+	</head>
 
 <body>
 
