@@ -10,6 +10,8 @@
 	</style>	
 	<script>
 		var b;
+		var dx = Math.random() * 600;
+		var dy = Math.random() * 600;
 		function init(){
 		   //setup for animations
 		   b = document.getElementById("box");
@@ -29,6 +31,19 @@
 					window.setTimeout(callback, 1000 / 60);
 				};
 			}}();
+			function move(){
+				x += (dx - x) * 0.15;
+				y += (dy - y) * 0.15;
+				b.style.left = x + "px";
+				b.style.top = y + "px";
+				if(Math.abs(x - dx) < 1) {
+					dx = Math.random() * 600;
+					dy = Math.random() * 600;
+					}
+					requestAnimFrame(move, b);
+					}
+
+
 	</script>
 
 
