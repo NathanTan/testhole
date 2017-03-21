@@ -18,14 +18,21 @@
 		var dx = Math.random() * 600;
 		var dy = Math.random() * 600;
 
+		var speed = 0;
 		var x=0;
 		var y=0;
 		function init(){
 		   //setup for animations
 		   b = document.getElementById("box");
-//		   b.onclick = move();
+		   //document.getElementById("box").
+		   b.addEventListener("click", move);
+		   b.onclick = function() { 
+		      speed += 1; console.log(speed)
+		   
+			 document.getElementById("speed").innerText = "speed = " + speed;
 
-		   move();
+		   };
+		   //move();
 		}
 
 		window.requestAnimFrame = (function(){
@@ -63,6 +70,9 @@
 <div id="box">
 </div>
 
+<div>
+   <h2 id="speed">speed = 0</h2>
+</div>
 
 
 </body>
